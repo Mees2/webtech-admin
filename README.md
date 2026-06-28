@@ -80,15 +80,6 @@ http://localhost:4200  →    http://localhost:8000
 
 ---
 
-## 🆘 Getting 401 Errors?
-
-Follow these steps in order:
-1. Open: BACKEND_DATABASE_SETUP.md
-2. Run: Steps 1-8
-3. Test: Login at http://localhost:4200
-4. ✅ Should work!
-
----
 
 **Status**: Frontend ✅ Ready | Backend ⏳ Setup Needed | Database ⏳ See Guide
 
