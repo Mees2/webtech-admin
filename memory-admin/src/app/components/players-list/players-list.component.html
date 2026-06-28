@@ -1,0 +1,54 @@
+<div class="players-list-wrapper">
+  <div class="list-header">
+    <div class="header-title">
+      <h2>Registered Players</h2>
+      <span class="player-count">{{ filteredPlayers.length }} player(s)</span>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text"
+          class="search-input"
+          placeholder="Search players..."
+          [(ngModel)]="searchQuery"
+          (input)="onSearchChange($event)"
+        />
+      </div>
+
+      <select 
+        class="sort-select"
+        [(ngModel)]="sortBy"
+        (change)="onSortChange($event)"
+      >
+        <option value="username">Sort by Username</option>
+        <option value="email">Sort by Email</option>
+      </select>
+    </div>
+  </div>
+
+  @if (filteredPlayers.length > 0) {
+    <div class="list-container">
+      @for (player of filteredPlayers; track player.username; let index = $index) {
+        <div class="player-item" [class.alt]="index % 2 === 1">
+          <div class="player-avatar">
+            {{ player.username.charAt(0).toUpperCase() }}
+          </div>
+          <div class="player-info">
+            <h3 class="player-username">{{ player.username }}</h3>
+            <p class="player-email">{{ player.email }}</p>
+          </div>
+          <div class="player-index">
+            #{{ index + 1 }}
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <div class="empty-icon">👤</div>
+      <p>No players found matching your search</p>
+    </div>
+  }
+</div>

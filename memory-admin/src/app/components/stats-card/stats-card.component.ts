@@ -1,0 +1,20 @@
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+/**
+ * StatsCardComponent displays individual statistics in a card format
+ * Shows a title, value, icon, and color indicator
+ */
+@Component({
+  selector: 'app-stats-card',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './stats-card.component.html',
+  styleUrl: './stats-card.component.scss'
+})
+export class StatsCardComponent {
+  @Input() title: string = '';
+  @Input() value: number = 0;
+  @Input() icon: string = '📊';
+  @Input() color: 'primary' | 'success' | 'info' | 'warning' = 'primary';
+}

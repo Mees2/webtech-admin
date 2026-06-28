@@ -1,0 +1,29 @@
+<header class="app-header">
+  <div class="header-content">
+    <div class="logo-section">
+      <span class="logo-icon">🎮</span>
+      <h1>Memory Game Admin</h1>
+      <span class="version">v1.0</span>
+    </div>
+
+    <div class="actions">
+      <button 
+        class="refresh-button" 
+        (click)="refreshData()"
+        [class.refreshing]="isRefreshing"
+        title="Refresh data"
+      >
+        <span class="icon">🔄</span>
+        {{ isRefreshing ? 'Refreshing...' : 'Refresh' }}
+      </button>
+      <button 
+        class="logout-button" 
+        (click)="logout()"
+        title="Logout"
+      >
+        <span class="icon">🚪</span>
+        Logout
+      </button>
+    </div>
+  </div>
+</header>

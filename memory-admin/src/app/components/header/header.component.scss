@@ -1,0 +1,152 @@
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .logo-icon {
+    font-size: 28px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .version {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+
+  button {
+    padding: 10px 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+
+    .icon {
+      font-size: 16px;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+
+  .refresh-button {
+    &.refreshing {
+      opacity: 0.7;
+
+      .icon {
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .logo-section {
+    flex: 1 100%;
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  .actions {
+    flex: 1 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 15px;
+  }
+
+  .header-content {
+    gap: 10px;
+  }
+
+  .logo-section {
+    gap: 8px;
+
+    .logo-icon {
+      font-size: 24px;
+    }
+
+    h1 {
+      font-size: 18px;
+    }
+
+    .version {
+      font-size: 10px;
+    }
+  }
+
+  .actions {
+    gap: 8px;
+
+    button {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+  }
+}

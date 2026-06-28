@@ -1,0 +1,9 @@
+<div class="chart-wrapper">
+  @if (data && data.length > 0) {
+    <div #chartContainer class="highchart-container"></div>
+  } @else {
+    <div class="no-data">
+      <p>No API data available</p>
+    </div>
+  }
+</div>
